@@ -1,0 +1,83 @@
+<h2 id="heading1">NAME</h2>
+<p class="indent">
+<b>m2txt</b>
+- creates a mail message to send to a mail to sms text gateway.
+</p>
+<h2 id="heading2">SYNOPSIS</h2>
+<p class="indent">
+<b>m2txt</b> [<b>-c </b><i>&lt;config_file&gt;</i>] [<b>-d</b>] [<b>-l</b>]
+[<b>-r </b><i>&lt;rcpt_email_addr&gt;</i>] [<b>-v</b>]  &lt;<i>clientid</i>&gt;
+.br
+</p>
+<h2 id="heading3">AVAILABILITY</h2>
+<p class="indent">
+<b>m2txt</b>
+is a Bourne shell script which should work equally well on all versions of UNIX,
+Linux and Mac OS X.
+</p>
+<h2 id="heading4">DESCRIPTION</h2>
+<p class="indent">
+<b>m2txt</b>
+uses the event and date/time parameters received on the command line to 
+create a subject line to send to the sms gateway. 
+A brief message is also appended to prevent problems which may be experienced
+if <i>mailx</i> receives a null message.
+</p>
+<p class="indent">
+<b>m2txt</b>
+is designed to be called by the <b>orage</b> calendar programme to text alerts
+to the calendar user but could also be used from the command line.
+</p>
+<h2 id="heading5">OPTIONS</h2>
+<p class="indent">
+</p>
+<p class="indent">
+<b>-c</b>
+Use the specified configuration file in preference to the default
+<i>"/usr/local/etc/m2txt.cf"</i>. If no configuration file is found the 
+script will attempt to soldier on with the information it has from the 
+command line.
+</p>
+<p class="indent">
+<b>-d</b>
+Start in debug mode. The <b>-x</b> option is set within the shell.
+</p>
+<p class="indent">
+<b>-v</b>
+Set verbose mode. Ordinarily 
+<b>m2txt</b>
+operates silently unless show stopping problems are detected. In 
+<i>verbose</i>
+mode 
+<b>m2txt</b>
+reports on each significant action.
+<b>-V</b>
+<b>m2txt </b>
+reports the release details and terminates.
+</p>
+<h2 id="heading6">EXAMPLES</h2>
+<p class="indent">
+<div class="cmdline">
+<pre>
+m2txt  &lt;start-time&gt; &lt;event&gt; &lt;recipient&gt;
+</pre>
+</div>
+</p>
+<p class="indent">
+In the <b>Orage</b> calendar the syntax for setting the <i>Alarm</i> is "/usr/local/m2txt.cf &lt;&ST&gt; &lt;&T&gt;".
+</p>
+<h2 id="heading8">BUGS</h2>
+<p class="indent">
+The script is quite crude having little or no error checking. The consequences
+of unexpected input are untested. 
+</p>
+<h2 id="heading9">SEE ALSO</h2>
+<p class="indent">
+</p>
+<h2 id="heading10">AUTHOR</h2>
+<p class="indent">
+Clifford W Fulford, City Linux. Contact fulford@fulford.net or +44 (0)709 229 5385.
+</p>
+<h2 id="heading11">HISTORY</h2>
+<p class="indent">
+

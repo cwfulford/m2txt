@@ -1,0 +1,59 @@
+.TH M2TXT 8l "29th March r1.9
+.SH NAME
+.B m2txt
+- creates a mail message to send to a mail to sms text gateway.
+.SH SYNOPSIS
+\fBm2txt\fR [\fB-c \fI<config_file>\fR] [\fB-d\fR] [\fB-l\fR]
+[\fB-r \fI<rcpt_email_addr>\fR] [\fB-v\fR]  <\fIclientid\fR>
+.br
+.SH AVAILABILITY
+.B m2txt
+is a Bourne shell script which should work equally well on all versions of UNIX,
+Linux and Mac OS X.
+.SH DESCRIPTION
+.B m2txt
+uses the event and date/time parameters received on the command line to 
+create a subject line to send to the sms gateway. 
+A brief message is also appended to prevent problems which may be experienced
+if \fImailx\fR receives a null message.
+.LP
+.B m2txt
+is designed to be called by the \fBorage\fR calendar programme to text alerts
+to the calendar user but could also be used from the command line.
+.SH OPTIONS
+.TP 5
+.B -c
+Use the specified configuration file in preference to the default
+\fI"/usr/local/etc/m2txt.cf"\fR. If no configuration file is found the 
+script will attempt to soldier on with the information it has from the 
+command line.
+.TP 5
+\fB-d\fR
+Start in debug mode. The \fB-x\fR option is set within the shell.
+.TP
+.B -v
+Set verbose mode. Ordinarily 
+.B m2txt
+operates silently unless show stopping problems are detected. In 
+.I verbose
+mode 
+.B m2txt
+reports on each significant action.
+.B -V
+.B m2txt 
+reports the release details and terminates.
+.SH EXAMPLES
+.IP
+.ft CW
+m2txt  <start-time> <event> <recipient>
+.ft R
+.LP
+In the \fBOrage\fR calendar the syntax for setting the \fIAlarm\fR is "/usr/local/m2txt.cf <&ST> <&T>".
+.SH BUGS
+The script is quite crude having little or no error checking. The consequences
+of unexpected input are untested. 
+.SH SEE ALSO
+.SH AUTHOR
+Clifford W Fulford, City Linux. Contact fulford@fulford.net or +44 (0)709 229 5385.
+.SH HISTORY
+
